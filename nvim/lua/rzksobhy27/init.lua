@@ -1,0 +1,5 @@
+require("rzksobhy27.opts")
+require("rzksobhy27.packer")
+require("rzksobhy27.plugins")
+require("rzksobhy27.lsp")
+require("rzksobhy27.dap")
