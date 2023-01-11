@@ -5,6 +5,7 @@ local vnoremap = Remap.vnoremap
 local xnoremap = Remap.xnoremap
 local inoremap = Remap.inoremap
 -- local cnoremap = Remap.cnoremap
+local tnoremap = Remap.tnoremap
 
 nnoremap("<leader>e", ":Ex<CR>")
 
@@ -41,9 +42,11 @@ nnoremap("Y", "yg$")
 nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")
 
+-- better escape
 inoremap("<C-c>", "<ESC>")
 vnoremap("<C-c>", "<ESC>")
 nnoremap("<C-c>", "<ESC>")
+tnoremap("<C-d>", "<C-\\><C-n>")
 
 -- don't quit my editor
 nmap("<C-z>", "<NOP>")
@@ -53,5 +56,4 @@ nmap("q:", "<NOP>")
 xnoremap("<leader>p", '"_dP')
 
 nnoremap("U", ":UndotreeToggle<CR>")
-
 nnoremap("<leader>m", require("maximizer").toggle)

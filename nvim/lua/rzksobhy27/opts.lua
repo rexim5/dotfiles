@@ -33,6 +33,7 @@ vim.opt.conceallevel = 3
 vim.opt.confirm = true
 vim.opt.grepprg = "rg --vimgrep"
 vim.opt.iskeyword:remove("_")
+vim.opt.hidden = false
 
 vim.g.mapleader = " "
 vim.g.netrw_banner = 0
