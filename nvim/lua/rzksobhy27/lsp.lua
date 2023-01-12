@@ -7,7 +7,6 @@ local def_opts = {
 
 local function setup(server, opts)
     opts = opts or {}
-
     opts = vim.tbl_deep_extend("keep", opts, def_opts)
 
     lsp[server].setup(opts)

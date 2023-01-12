@@ -25,6 +25,11 @@ nnoremap("<C-Down>", "<cmd>resize -2<CR>")
 nnoremap("<C-Left>", "<cmd>vertical resize -2<CR>")
 nnoremap("<C-Right>", "<cmd>vertical resize +2<CR>")
 
+-- tab keymaps
+nnoremap("g]", ":tabnext<CR>")
+nnoremap("g[", ":tabprevious<CR>")
+nnoremap("gq", ":tabclose<CR>")
+
 -- better indentation
 vnoremap("<", "<gv")
 vnoremap(">", ">gv")
@@ -47,6 +52,7 @@ inoremap("<C-c>", "<ESC>")
 vnoremap("<C-c>", "<ESC>")
 nnoremap("<C-c>", "<ESC>")
 tnoremap("<C-d>", "<C-\\><C-n>")
+xnoremap("<C-c>", "<ESC>")
 
 -- don't quit my editor
 nmap("<C-z>", "<NOP>")
