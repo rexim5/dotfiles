@@ -1,5 +1,4 @@
 local lsp = require("lspconfig")
-local nnoremap = require("rzksobhy27.map").nnoremap
 
 local def_opts = {
     capabilities = require("cmp_nvim_lsp").default_capabilities(),
@@ -63,7 +62,7 @@ setup("sumneko_lua", {
     },
 })
 
-local group = vim.api.nvim_create_augroup("LspAttach_group", { clear = true })
+local group = vim.api.nvim_create_augroup("LspInlayHints", { clear = true })
 vim.api.nvim_create_autocmd("LspAttach", {
     group = group,
     callback = function(args)
@@ -73,15 +72,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
         local bufnr = args.buf
         local client = vim.lsp.get_client_by_id(args.data.client_id)
-
-        local bufopts = { buffer = bufnr }
-        nnoremap("K", vim.lsp.buf.hover, bufopts)
-        nnoremap("gd", vim.lsp.buf.definition, bufopts)
-        nnoremap("gr", vim.lsp.buf.references, bufopts)
-        nnoremap("<F2>", vim.lsp.buf.rename, bufopts)
-        nnoremap("<leader>la", vim.lsp.buf.code_action, bufopts)
-        nnoremap("<leader>ld", vim.diagnostic.open_float, bufopts)
-        nnoremap("<leader>lf", vim.lsp.buf.format)
 
         require("lsp-inlayhints").on_attach(client, bufnr, false)
     end,
