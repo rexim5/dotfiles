@@ -86,3 +86,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         require("lsp-inlayhints").on_attach(client, bufnr, false)
     end,
 })
+
+vim.diagnostic.config({
+    virtual_text = false,
+})
