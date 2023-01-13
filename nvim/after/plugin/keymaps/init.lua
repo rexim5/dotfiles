@@ -51,7 +51,6 @@ nnoremap("<C-u>", "<C-u>zz")
 inoremap("<C-c>", "<ESC>")
 vnoremap("<C-c>", "<ESC>")
 nnoremap("<C-c>", "<ESC>")
-tnoremap("<C-d>", "<C-\\><C-n>")
 xnoremap("<C-c>", "<ESC>")
 
 -- don't quit my editor
