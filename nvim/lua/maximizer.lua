@@ -1,5 +1,13 @@
 local M = {}
 
+local function is_float(winid)
+     if vim.api.nvim_win_get_config(0).relative == "" then
+         return false
+     end
+
+     return true
+end
+
 local function restore()
     vim.cmd.wincmd("=")
     vim.t.maximizer_maximized = false
@@ -21,9 +29,22 @@ function M.toggle()
 end
 
 local group = vim.api.nvim_create_augroup("maximizer", { clear = true })
-vim.api.nvim_create_autocmd({ "WinLeave", "WinNew" }, {
+
+local from_float = false
+vim.api.nvim_create_autocmd("WinLeave", {
     group = group,
     callback = function()
+        from_float = is_float(0)
+    end,
+})
+
+vim.api.nvim_create_autocmd("WinEnter", {
+    group = group,
+    callback = function()
+        if is_float(0) or from_float then
+            return
+        end
+
         if vim.t.maximizer_maximized then
             restore()
         end
