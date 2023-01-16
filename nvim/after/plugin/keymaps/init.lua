@@ -41,7 +41,7 @@ nmap("<C-z>", "<NOP>")
 -- and there is no way to disable it
 nmap("q:", "<NOP>")
 
+-- replace without changing current thing on the clipboard
 xnoremap("<leader>p", '"_dP')
 
-nnoremap("U", ":UndotreeToggle<CR>")
 nnoremap("<leader>m", require("maximizer").toggle)

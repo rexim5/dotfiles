@@ -52,6 +52,10 @@ cmp.setup({
         end),
     },
 
+    completion = {
+        autocomplete = false,
+    },
+
     sources = {
         { name = "nvim_lua" },
         { name = "nvim_lsp" },

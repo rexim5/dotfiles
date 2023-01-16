@@ -13,6 +13,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
         local bufopts = { buffer = bufnr }
         nnoremap("K", vim.lsp.buf.hover, bufopts)
+        nnoremap("<C-k>", vim.lsp.buf.signature_help, bufopts)
         nnoremap("gd", vim.lsp.buf.definition, bufopts)
         nnoremap("gr", vim.lsp.buf.references, bufopts)
         nnoremap("gi", vim.lsp.buf.implementation, bufopts)
