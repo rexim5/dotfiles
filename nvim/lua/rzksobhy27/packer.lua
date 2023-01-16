@@ -15,9 +15,8 @@ vim.cmd([[packadd packer.nvim]])
 return require("packer").startup(function(use)
     use("wbthomason/packer.nvim")
     use("nvim-lua/plenary.nvim")
-    use("mbbill/undotree")
     use("numToStr/Comment.nvim")
-    use("ThePrimeagen/harpoon")
+    use("mbbill/undotree")
     use("mg979/vim-visual-multi")
     use("tpope/vim-fugitive")
     use("b0o/SchemaStore.nvim")
@@ -46,7 +45,6 @@ return require("packer").startup(function(use)
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
-        "hrsh7th/cmp-cmdline",
     })
     use({
         "L3MON4D3/LuaSnip",
