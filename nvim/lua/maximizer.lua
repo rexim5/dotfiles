@@ -1,11 +1,12 @@
 local M = {}
 
+---@param winid number
 local function is_float(winid)
-     if vim.api.nvim_win_get_config(0).relative == "" then
-         return false
-     end
+    if vim.api.nvim_win_get_config(winid).relative == "" then
+        return false
+    end
 
-     return true
+    return true
 end
 
 local function restore()
